@@ -10,6 +10,9 @@ class PapersController < ApplicationController
   # GET /papers/1
   # GET /papers/1.json
   def show
+    current_views_count = @paper.views_count.to_i
+    @paper.views_count = current_views_count + 1
+    @paper.save
   end
 
   # GET /papers/new
@@ -69,6 +72,6 @@ class PapersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paper_params
-      params.require(:paper).permit(:title, :content)
+      params.require(:paper).permit(:title, :content, :views_count)
     end
 end
