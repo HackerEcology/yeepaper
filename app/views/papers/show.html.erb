@@ -7,7 +7,7 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @paper.content %>
+  <%= markdown(@paper.content) %>
 </p>
 
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
