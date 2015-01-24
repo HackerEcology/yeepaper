@@ -46,3 +46,6 @@ group :development, :test do
 end
 
 gem 'redcarpet'
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
