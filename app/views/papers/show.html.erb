@@ -1,22 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>论文标题:</strong>
+<h3>
   <%= @paper.title %>
-</p>
+</h3>
 <p>
-  <strong>原文作者:</strong>
-  <%= @paper.author_name %>
-</p>
-<p>
-  <strong>原文链接:</strong>
-  <%= @paper.original_link %>
+  <i class="fa fa-user"></i> <%= @paper.author_name %>
+  <i class="fa fa-eye"></i> <%= @paper.views_count %>
+  <i class="fa fa-link"></i> <%= @paper.original_link %>
 </p>
 
-<p>
-  <strong>论文内容:</strong>
-  <%= markdown(@paper.content) %>
-</p>
+<div class="paper-content"><%= markdown(@paper.content) %></div>
 
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
