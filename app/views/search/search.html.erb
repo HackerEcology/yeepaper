@@ -1,26 +1,25 @@
-<div class="search-container">
-  <h1><i class="fa fa-cloud fa-inverse"></i></i>Papers Search</h1>
+<div class="row">
+  <div class="col-lg-6">
+    <%= form_for search_path, :html => { :class => "search-form" }, method: :get do |f| %>
+      <div class="input-group">
+        <%= text_field_tag :q, params[:q], :placeholder => "译文献，易研究", :class=>"form-control" %>
 
-  <div class="row">
-    <div class="col-lg-6">
-      <%= form_for search_path, :html => { :class => "search-form" }, method: :get do |f| %>
-        <div class="input-group">
-          <%= text_field_tag :q, params[:q], :placeholder => "译文献，易研究", :class=>"form-control" %>
-
-          <span class="input-group-btn">
-            <%= submit_tag "YeePaper", name: nil, :class=>"btn btn-default" %>
-          </span>
-        </div><!-- /input-group -->
-      <% end %>
-    </div><!-- /.col-lg-6 -->
-  </div><!-- /.row -->
-  <ul>
-    <% @papers.each do |paper| %>
-    <li>
-      <h3>
-        <%= link_to paper.title, controller: "papers", action: "show", id: paper._id%>
-      </h3>
-    </li>
+        <span class="input-group-btn">
+          <%= submit_tag "YeePaper", name: nil, :class=>"btn btn-default" %>
+        </span>
+      </div><!-- /input-group -->
     <% end %>
-  </ul>
-</div>
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+<ul>
+  <% @papers.each do |paper| %>
+  <li>
+    <h3>
+      <%= link_to paper.title, controller: "papers", action: "show", id: paper._id%>
+      <%= link_to paper.views_count, controller: "papers", action: "show", id: paper._id%>
+      <%= link_to paper.author_name, controller: "papers", action: "show", id: paper._id%>
+      <%= link_to paper.original_link, controller: "papers", action: "show", id: paper._id%>
+    </h3>
+  </li>
+  <% end %>
+</ul>
