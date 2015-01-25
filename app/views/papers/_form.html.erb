@@ -16,6 +16,14 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label "原文作者" %><br>
+    <%= f.text_field :author_name %>
+  </div>
+  <div class="field">
+    <%= f.label "原文链接" %><br>
+    <%= f.text_field :original_link %>
+  </div>
+  <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
