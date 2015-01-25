@@ -15,11 +15,11 @@
   <% @papers.each do |paper| %>
   <li>
     <h3>
-      <%= link_to paper.title, controller: "papers", action: "show", id: paper._id%>
-      <%= link_to paper.views_count, controller: "papers", action: "show", id: paper._id%>
-      <%= link_to paper.author_name, controller: "papers", action: "show", id: paper._id%>
-      <%= link_to paper.original_link, controller: "papers", action: "show", id: paper._id%>
+      <%= link_to paper.title, controller: "papers", action: "show", id: paper._id%> - <%= paper.author_name %>
     </h3>
+    <p>查看人数：<%= paper.views_count %></p>
+
+    <p><%= markdown(paper.content) %></p>
   </li>
   <% end %>
 </ul>
