@@ -49,3 +49,5 @@ gem 'redcarpet'
 
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+
+gem 'font-awesome-rails', '4.1.0'
