@@ -4,7 +4,7 @@
   <% @papers.each do |paper| %>
   <li class="search-list">
     <h3>
-      <%= paper.title %>
+      <%= link_to paper.title, paper_path(paper) %>
     </h3>
     <p><i class="fa fa-user"></i> <%= paper.author_name %> <i class="fa fa-eye"></i> <%= paper.views_count %></p>
     <div class="search-content"><%= markdown(paper.content) %></div>
