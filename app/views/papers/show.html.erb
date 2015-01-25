@@ -6,10 +6,13 @@
 <p>
   <i class="fa fa-user"></i> <%= @paper.author_name %>
   <i class="fa fa-eye"></i> <%= @paper.views_count %>
-  <i class="fa fa-link"></i> <%= @paper.original_link %>
 </p>
 
 <div class="paper-content"><%= markdown(@paper.content) %></div>
+
+<p>
+  <i class="fa fa-link"></i> 原文链接：<a href="<%= @paper.original_link %>" target="_blank"><%= @paper.original_link %></a>
+</p>
 
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %> |
