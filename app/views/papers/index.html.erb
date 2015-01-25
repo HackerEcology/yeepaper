@@ -1,18 +1,13 @@
 <p id="notice"><%= notice %></p>
-
-<div class="search-container">
-  <h1><i class="fa fa-cloud fa-inverse"></i></i>Papers Search</h1>
-
-  <div class="row">
-    <div class="col-lg-6">
-      <form action="/search" method="get">
-        <div class="input-group">
-          <input type="text" name="q" value="<%= params[:q] %>" placeholder="译文献，易研究" class="form-control" />
-          <span class="input-group-btn">
-            <button type="submit" name="YeePaper" class="btn btn-default">YeePaper</button>
-          </span>
-        </div>
-      </form>
-    </div><!-- /.col-lg-6 -->
-  </div><!-- /.row -->
-</div>
+<h1>所有论文</h1>
+<ul class="search-lists">
+  <% @papers.each do |paper| %>
+  <li class="search-list">
+    <h3>
+      <%= paper.title %>
+    </h3>
+    <p><i class="fa fa-user"></i> <%= paper.author_name %> <i class="fa fa-eye"></i> <%= paper.views_count %></p>
+    <div class="search-content"><%= markdown(paper.content) %></div>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class="search-container">
+  <h1><i class="fa fa-cloud fa-inverse"></i></i>Papers Search</h1>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <form action="/search" method="get">
+        <div class="input-group">
+          <input type="text" name="q" value="<%= params[:q] %>" placeholder="译文献，易研究" class="form-control" />
+          <span class="input-group-btn">
+            <button type="submit" name="YeePaper" class="btn btn-default">YeePaper</button>
+          </span>
+        </div>
+      </form>
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+</div>

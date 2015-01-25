@@ -11,9 +11,9 @@
     <% end %>
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
-<ul>
+<ul class="search-lists">
   <% @papers.each do |paper| %>
-  <li>
+  <li class="search-list">
     <h3>
       <%= link_to paper.title, controller: "papers", action: "show", id: paper._id%>
     </h3>
